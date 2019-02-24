@@ -1,0 +1,68 @@
+\documentclass[a5paper]{article} 
+
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel} 
+\usepackage{amssymb,amsmath,eucal,latexsym,amsthm} 
+\usepackage{indentfirst}
+\usepackage{enumerate}
+
+\usepackage{ifmtarg}
+\addto{\captionsrussian}{\renewcommand{\refname}{}}
+\addto{\captionsenglish}{\renewcommand{\refname}{}}
+
+\def\newarticle#1#2#3{
+\vskip 0.1cm
+\begin{center}
+{\bf #1}\\
+%\if{#4=''}\\\else\footnote{#4}\\\fi
+\vskip 0.1cm
+{\bf #2}\\ #3
+\end{center}
+\addcontentsline{toc}{section}{{\it #2} #1}
+\vskip 0.1cm
+\setcounter{equation}{0}
+\setcounter{figure}{0}
+\setcounter{footnote}{0}}
+\newcounter{foref}[section]
+
+\usepackage[top=1.6cm, bottom=1.8cm, left=1.6cm, right=1.6cm]{geometry}
+
+\setcounter{page}{1}
+
+
+\begin{document}
+
+\newarticle
+{Symmetry breaking in competing single-well linear-nonlinear potentials}
+{
+	D.~A.~Zezyulin\textsuperscript{a},
+	M.~E.~Lebedev\textsuperscript{b,c},
+	G.~L.~Alfimov\textsuperscript{c,d},
+	and~B.~A.~Malomed\textsuperscript{a,e}
+}
+{
+	\textsuperscript{a} ITMO University, St. Petersburg, Russia; \\
+	\textsuperscript{b} All-Russian Institute for Scientific and Technical Information, RAS, Moscow, Russia; \\
+	\textsuperscript{c} Institute of Mathematics with Computer Center, RAS, Ufa, Russia; \\
+	\textsuperscript{d} MIEE University, Zelenograd, Moscow, Russia; \\
+	\textsuperscript{e} Tel Aviv University, Israel
+} 
+
+The combination of linear and nonlinear potentials, both shaped as a single well, enables competition between the confinement and expulsion induced by the former and latter potentials, respectively.
+We demonstrate that this setting leads to spontaneous symmetry breaking (SSB) of the ground state in the respective generalized nonlinear Schr\"odinger (Gross-Pitaevskii) equation:
+
+\begin{equation}
+i \Psi_t = -\Psi_{xx} + \frac{1}{2} \omega^2 x^2 \Psi - P(x) \Psi |\Psi|^2.
+\end{equation}
+
+Two different SSB bifurcation scenarios are possible, depending on the shape of the nonlinearity -- modulation profile, which determines the nonlinear potential $P(x)$.
+If the profile is bounded (remaining finite at $|x| \to \infty$), at a critical value of the integral norm the spatially symmetric state loses its stability, giving rise to a pair of mutually symmetric stable asymmetric ones via a direct pitchfork bifurcation.
+On the other hand, if the nonlinear potential is unbounded, two unstable asymmetric modes merge into the symmetric metastable mode and destabilize it via an inverted pitchfork bifurcation.
+
+\vspace{-1cm}
+
+\begin{thebibliography}{99}
+\bibitem{ZLAM2018} D. A. Zezyulin, M. E. Lebedev, G. L. Alfimov, and B. A. Malomed, Symmetry breaking in competing single-well linear-nonlinear potentials, Phys. Rev. E \textbf{98}, 042209 (2018).
+\end{thebibliography}
+
+\end{document}
