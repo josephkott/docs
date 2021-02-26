@@ -1,0 +1,84 @@
+\documentclass[a5paper]{article}
+\usepackage[cp1251]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amssymb, amsmath, amsthm, eucal, latexsym}
+\usepackage{indentfirst}
+\usepackage{enumerate}
+
+\addto{\captionsrussian}{\renewcommand{\refname}{}}
+\addto{\captionsenglish}{\renewcommand{\refname}{}}
+
+\def\newarticle#1#2#3{
+\vskip 0.1cm
+\begin{center}
+{\bf #1}\\
+\vskip 0.1cm
+{\bf #2}\\ #3
+\end{center}
+\addcontentsline{toc}{section}{{\it #2} #1}
+\vskip 0.1cm
+\setcounter{equation}{0}
+\setcounter{figure}{0}
+\setcounter{footnote}{0}}
+\newcounter{foref}[section]
+
+\usepackage[top=1.6cm, bottom=1.8cm, left=1.6cm, right=1.6cm]{geometry}
+
+\setcounter{page}{1}
+
+\newtheorem*{theorem}{Theorem}
+
+\begin{document}
+\selectlanguage{english}
+\newarticle{Coding of bounded solutions of equation $u_{xx} - u + \eta(x) u^3 = 0$ with periodic piecewise constant function $\eta(x)$}{M. E. Lebedev, G. L. Alfimov}{MIET University, Zelenograd, Moscow, Russia}
+
+Consider a one-dimensional second-order differential equation
+\begin{equation}
+	u_{xx} - u + \eta(x) u^3 = 0,
+\label{EqMain}
+\end{equation}
+where $\eta(x)$ is a periodic piecewise-constant function of period $L + \ell$,
+\begin{equation}
+	\eta(x)=\left\{
+		\begin{array}{rl}
+			-1, &  x \in [0; L]; \\[1.5mm]
+			\xi, & x \in [L; L + \ell],
+		\end{array}
+	\right.
+\label{W(x)}
+\end{equation}
+where $\xi > 0$.
+Let us define two topological spaces.
+
+\underline{At first}, denote by $\mathcal{S}(b), \, b \in \mathbb{R}$, a set of solutions for equation (\ref{EqMain}) such that $|u(x)| < b$ on the whole real axis $\mathbb{R}$.
+Evidently, $b_1 < b_2$ implies $\mathcal{S}(b_1) \subseteq \mathcal{S}(b_2)$.
+One can define a metric $\rho$ in $\mathcal{S}(b)$ as follows,
+\begin{equation}
+	\rho(v, w)=\sqrt{(v(0) - w(0))^2 + (v_x(0) - w_x(0))^2}, \quad v(x), \, w(x) \in \mathcal{S}(b). 
+\end{equation}
+This implies that $\mathcal{S}(b)$ can be regarded as topological space where neighbourhood $U_\varepsilon(u)$ of an element $u \in \mathcal{S}(b)$ is defined as $U_\varepsilon(u) = \{ v|\ \rho(u, v) < \varepsilon \}$.
+
+\underline{At second}, denote by $\Omega_n$ the set of bi-infinite sequences $\{\ldots,i_{-1},i_0,i_1,\ldots\}$ where $i_k$, $k=0,\pm1,\ldots$, is an integer, $-n\leq i_k\leq n$.
+Evidently that for $n_1 < n_2$ one has $\Omega_{n_1} \subset \Omega_{n_2}$.
+The set $\Omega_n$ can be regarded as topological space where neighbourhood $W_k (\omega^*)$ of an element $\omega^* = \{ \dots, i_{-1}^*, i_0^*, i_1^*, \dots \} \in \Omega_n$ is defined as $W_k(\omega^*) = \{ \omega |\ i_s^* = i_s, \, |s| < k \}$.
+
+The main result of our study is the following theorem.
+\begin{theorem}
+For any $N$ there exists a pair $(L_0, \ell_0)$ such that for any pair $(L, \ell)$, $L > L_0$ and $0 < \ell < \ell_0$, there exist a sequence
+\begin{equation*}
+	b_0 < b_1 < \ldots < b_N,
+\end{equation*}
+and a homeomorphism $T$ such that $T \mathcal{S}(b_n) = \Omega_n$, $n = 0, 1, \ldots, N$.
+\end{theorem}
+
+The theorem can be illustrated by the following diagram:
+\begin{equation}
+\begin{array}{lllllll}
+	\mathcal{S}(b_0) & \subset & \mathcal{S}(b_1) & \subset & \cdots & \subset & \mathcal{S}(b_N) \\ [2mm]
+	\downarrow{T} & & \downarrow{T} & & & & \downarrow{T} \\ [2mm]
+	\Omega_0 & \subset & \Omega_1 & \subset & \cdots & \subset & \Omega_N
+\end{array}
+\end{equation}
+
+The theorem is proved for $\xi$ below a threshold $\xi_0$ that is a root of some transcendent equation.
+\end{document} 
